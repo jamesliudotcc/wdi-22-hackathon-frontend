@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import {Button, Icon} from 'react-materialize';
 
 class Home extends Component {
   render() {
     return(
-        <p>This is a home page. You should probably write something here.</p>
+      <div>
+        <p>An App To help Roomates with Groceries!</p>
+        <Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
+      </div>
+        
+
       );
   }
 }

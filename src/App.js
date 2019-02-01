@@ -3,12 +3,15 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
 import './App.css';
-import Footer from './layout/Footer';
 import Home from './Home';
 import Login from './auth/Login';
 import Nav from './layout/Nav';
 import Profile from './Profile';
 import Signup from './auth/Signup';
+import Items from './views/Items';
+import AddItems from './views/AddItems';
+import Store from './views/Store';
+
 
 class App extends Component {
   constructor(props){
@@ -24,7 +27,7 @@ class App extends Component {
   }
 
   getUser = () => {
-    // TODO: SEE IF THERE'S A TOKEN
+    // SEE IF THERE'S A TOKEN
     let token = localStorage.getItem('serverToken')
     // IF THERE IS, TRY TO GET USER INFO
     if(token){
@@ -65,9 +68,17 @@ class App extends Component {
             <Route path="/profile" component={
               () => (<Profile user={this.state.user} updateUser={this.getUser} />)
             } />
+            <Route path="/items" component={
+              () => (<Items user={this.state.user} updateUser={this.getUser} />)
+            } />
+            <Route path="/additems" component={
+              () => (<AddItems user={this.state.user} updateUser={this.getUser} />)
+            } />
+            <Route path="/store" component={
+              () => (<Store user={this.state.user} updateUser={this.getUser} />)
+            } />
           </div>
         </Router>
-        <Footer />
       </div>
     );
   }
