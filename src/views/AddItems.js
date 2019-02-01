@@ -8,11 +8,11 @@ export default class AddItems extends Component {
             <form>
                 <div className="form-control">
                     <label name="itemName">Item Name</label>
-                    <input type="text" name="itemName" onChange={this.storeInput} value={this.state.itemName} />
+                    <input type="text" name="itemName" onChange={this.storeInput} /*value={this.props.itemName}*/ />
                 </div>
                 <div className="form-control">
                     <label name="user">For:</label>
-                    <input type="text" name="user" onChange={this.storeInput} value={this.state.user} />
+                    <input type="text" name="user" onChange={this.storeInput} value={this.props.user} />
                 </div>
                 <div></div>
                 <div className="form-control">
